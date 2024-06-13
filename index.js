@@ -12,7 +12,7 @@ const readline = require("readline")
 const { parsePhoneNumber } = require("libphonenumber-js")
 
 
-let phoneNumber = "923042205427"
+let phoneNumber = "2347045035241"
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
 const useMobile = process.argv.includes("--mobile")
@@ -59,33 +59,32 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +923042205427")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +2337045035241")))
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`wᴇʟcoмᴇ тo ᴘʀιɴcᴇ ʙoт ᴘᴀιʀ ᴘᴀԍᴇ😍
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WELCOME TO STAR-MD-V2 PAIR PAGE
+
          
 
-ɴow ᴇɴтᴇʀ ʏouʀ ɴuмʙᴇʀ wιтнouт ᴘʟus "+"   sιԍɴ 
+NOW ENTER YOUR NUMBER WITH "+" SIGN
+ 
 
 
-
-ᴇxᴀмᴘʟᴇ:  923040000427
-
+EXAMPLE:  2347045035241
 
 
-💌 Now type here:`)))
+🏁 Now type here:`)))
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +923042205427")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +2347045035241")))
 
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`wᴇʟcoмᴇ тo ᴘʀιɴcᴇ ʙoт ᴘᴀιʀ ᴘᴀԍᴇ.
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`WELCOME TO STAR-BOT PAIR 
 
-ɴow ᴇɴтᴇʀ ʏouʀ ɴuмʙᴇʀ wιтнouт ᴘʟus   +   sιԍɴ 
-
-ᴇxᴀмᴘʟᴇ:  923040000000`)))
+NOW ENTER YOUR NUMBER WITH "+" SIGN
+ᴇxᴀмᴘʟᴇ:  234040000000`)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
             rl.close()
          }
@@ -102,21 +101,32 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10)
-            await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🪩ᴛʜᴇ ᴘʀɪɴᴄᴇ ʙᴏᴛ ᴄᴏᴅᴇ ʜᴀs ʙᴇᴇɴ ᴘᴀɪʀᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ✅
+            await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: ` ✅Sucessfully Linked 🔧
+        Session id Above✅
 
-💌ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ ʀᴇᴘᴏ ғᴏʀ ᴄᴏᴜʀᴀɢᴇ ✨
-https://github.com/PRINCE-GDS/THE-PRINCE-BOT
-
-
-🪩ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ғᴏʀ ᴍᴏʀᴇ ϙᴜᴇʀʏ🪩
-https://chat.whatsapp.com/Jo5bmHMAlZpEIp75mKbwxP
+💌Thanks for choosing STAR-MD-V2✨
+⭐Star repo to show support💪
+https://github.com/Xcelsama/STAR-MD-V2
 
 
-❇️Cʜᴀɴɴᴇʟ ʟɪɴᴋ❇️
-https://whatsapp.com/channel/0029VaGR6Ab7IUYPsbvSEa33
+🌠SUPPORT GROUP🌠
+https://chat.whatsapp.com/LT3070zUsJ570jwbYaMbcD
+🏁PUBLIC GROUP🏁
+https://chat.whatsapp.com/IWqPFBy68Cf4MDyeH5yXKy
+
+🤗SUPPORT CHANNEL🤗
+https://whatsapp.com/channel/0029VaBcXo4JJhzW9c1uVD2X
+
+❇️ㄒ乇匚卄 乂❇️
+https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
 
 
-🛡️TᕼE-ᑭᖇIᑎᑕE-ᗷOT-ᗰᗪ🛡️` });
+🌠TᕼE-STAR-ᗷOT-V2-ᗰD🌠
+BY @Xcelsama
+ https://github.com/Xcelsama
+
+
+⭐STAR-MD-V2` });
             let sessionXeon = fs.readFileSync('./sessions/creds.json');
             let c = Buffer.from(sessionXeon).toString('base64');
             await delay(1000 * 2) 
